@@ -50,3 +50,17 @@ class Parts(models.Model):
     description = models.CharField(max_length=255)
     purchase_price = models.DecimalField(max_digits=10, decimal_places=2)
     retail_price = models.DecimalField(max_digits=10, decimal_places=2)
+
+class PartsUsed(models.Model):
+    part = models.ForeignKey(Parts, on_delete=models.CASCADE)
+    service_ticket = models.ForeignKey(ServiceTicket, on_delete=models.CASCADE)
+    number_used = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+class ServiceMechanic(models.Model):
+    service_ticket = models.ForeignKey(ServiceTicket, on_delete=models.CASCADE)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    mechanic = models.ForeignKey(Mechanic, on_delete=models.CASCADE)
+    hours = models.DecimalField(max_digits=5, decimal_places=2)
+    comment = models.TextField()
+    rate = models.DecimalField(max_digits=10, decimal_places=2)

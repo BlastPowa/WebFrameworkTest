@@ -128,7 +128,7 @@ if __name__ == '__main__':
 
     my_mix.print_all_song()
 
-    section(" ASC Order")
+    section("ASC Order")
     my_mix.sort_playlist(order='ASC')
     my_mix.print_all_song()
 
@@ -136,9 +136,9 @@ if __name__ == '__main__':
     my_mix.sort_playlist(order='DES')
     my_mix.print_all_song()
 
-    section(" Shuffle Playlist")
+    section("Shuffle Playlist")
     my_mix.shuffle_playlist()
     my_mix.print_all_song()
 
-    section("display song info")
+    section("Display song info")
     album_1989.songs[0].display_info()
